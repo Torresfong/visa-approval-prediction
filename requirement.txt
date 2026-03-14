@@ -1,0 +1,19 @@
+pandas
+numpy
+matplotlib
+seaborn
+ipykernel
+scikit-learn
+imblearn
+scipy
+xgboost
+catboost
+pymongo
+evidently
+PyYAML
+boto3
+botocore
+fastapi
+uvicorn
+jinja2
+-e . #to look for setup.py

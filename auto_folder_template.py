@@ -11,7 +11,7 @@ list_of_files = [
     f"{project_name}/notebook/EDA.ipynb",
     f"{project_name}/notebook/feature_analysis.ipynb",
     f"{project_name}/notebook/model_analysis.ipynb",
-    f"{project_name}/notebook/main_utils.py"
+    f"{project_name}/notebook/main_utils.py",
     f"{project_name}/src/__init__.py",  
     f"{project_name}/src/data_ingestion.py",
     f"{project_name}/src/data_validation.py",
