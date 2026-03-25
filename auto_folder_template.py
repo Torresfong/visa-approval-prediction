@@ -49,5 +49,7 @@ for filepath in list_of_files:
         print(f"file is already present at{filepath}")
 
 #Activate visa environment in gitbash
-#source ~/.bashrc
-#conda activate visa
+"""
+source ~/.bashrc
+conda activate visa
+"""
