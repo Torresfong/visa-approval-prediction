@@ -1,7 +1,7 @@
 import os 
 from pathlib import Path # OS = path in window(\) or linux(/) are difference, using path in pathlib to remove this error 
 
-project_name = "us_visa approval prediction"
+project_name = "us_visa_application_prediction.."
 
 list_of_files = [
     f"{project_name}/__init__.py",

@@ -1,26 +1,26 @@
 setup.py
-us_visa approval prediction/__init__.py
-us_visa approval prediction/config/__init__.py
-us_visa approval prediction/config/data_loader.py
-us_visa approval prediction/constants/__init__.py
-us_visa approval prediction/data/__init__.py
-us_visa approval prediction/data/raw/__init__.py
-us_visa approval prediction/entity/__init__.py
-us_visa approval prediction/entity/artifact_entity.py
-us_visa approval prediction/entity/config_entity.py
-us_visa approval prediction/exception/__init__.py
-us_visa approval prediction/logger/__init__.py
-us_visa approval prediction/notebook/__init__.py
-us_visa approval prediction/notebook/main_utils.py
-us_visa approval prediction/src/__init__.py
-us_visa approval prediction/src/data_ingestion.py
-us_visa approval prediction/src/data_validation.py
-us_visa approval prediction/src/model_evaluation.py
-us_visa approval prediction/src/prediction.py
-us_visa approval prediction/src/preprocess.py
-us_visa approval prediction/src/training.py
-us_visa approval prediction/utils/__init__.py
-us_visa.egg-info/PKG-INFO
-us_visa.egg-info/SOURCES.txt
-us_visa.egg-info/dependency_links.txt
-us_visa.egg-info/top_level.txt
+us_visa_application_prediction../__init__.py
+us_visa_application_prediction../config/__init__.py
+us_visa_application_prediction../config/data_loader.py
+us_visa_application_prediction../constants/__init__.py
+us_visa_application_prediction../data/__init__.py
+us_visa_application_prediction../data/raw/__init__.py
+us_visa_application_prediction../entity/__init__.py
+us_visa_application_prediction../entity/artifact_entity.py
+us_visa_application_prediction../entity/config_entity.py
+us_visa_application_prediction../exception/__init__.py
+us_visa_application_prediction../logger/__init__.py
+us_visa_application_prediction../notebook/__init__.py
+us_visa_application_prediction../notebook/main_utils.py
+us_visa_application_prediction../src/__init__.py
+us_visa_application_prediction../src/data_ingestion.py
+us_visa_application_prediction../src/data_validation.py
+us_visa_application_prediction../src/model_evaluation.py
+us_visa_application_prediction../src/prediction.py
+us_visa_application_prediction../src/preprocess.py
+us_visa_application_prediction../src/training.py
+us_visa_application_prediction../utils/__init__.py
+us_visa_application_prediction...egg-info/PKG-INFO
+us_visa_application_prediction...egg-info/SOURCES.txt
+us_visa_application_prediction...egg-info/dependency_links.txt
+us_visa_application_prediction...egg-info/top_level.txt
