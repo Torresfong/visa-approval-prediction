@@ -38,7 +38,7 @@ class DataTransformation:
             raise FeatureEngineeringException(f"Error occurred while reading data from {file_path}: {e}") from e
 
     
-    def get_data_transformer_object(self) -> Pipeline:
+    def get_data_transformer_object(self) -> ColumnTransformer:
         """
         Method Name :   get_data_transformer_object
         Description :   This method creates and returns a data transformer object for the data
@@ -105,7 +105,7 @@ class DataTransformation:
                 train_df = DataTransformation.read_data(file_path=self.data_ingestion_artifact.trained_file_path)
                 test_df = DataTransformation.read_data(file_path=self.data_ingestion_artifact.test_file_path)
 
-                input_feature_train_df = train_df.drop(columns=[TARGET_COLUMN], axis=1)
+                input_feature_train_df = train_df.drop(columns=[TARGET_COLUMN])
                 target_feature_train_df = train_df[TARGET_COLUMN]
 
                 logging.info("Got train features and test features of Training dataset")
@@ -120,10 +120,9 @@ class DataTransformation:
 
                 input_feature_train_df = drop_columns(df=input_feature_train_df, cols = drop_cols)
 
-                input_feature_test_df = test_df.drop(columns=[TARGET_COLUMN], axis=1)
+                input_feature_test_df = test_df.drop(columns=[TARGET_COLUMN])
 
                 target_feature_test_df = test_df[TARGET_COLUMN]
-
 
                 input_feature_test_df['company_age'] = CURRENT_YEAR-input_feature_test_df['yr_of_estab']
 
@@ -149,8 +148,9 @@ class DataTransformation:
 
                 logging.info("Used the preprocessor object to transform the test features")
 
+                train_arr = np.c_[input_feature_train_arr, np.array(target_feature_train_df)]
+                test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
                 
-
                 logging.info("Created train array and test array")
 
                 save_object(self.data_transformation_config.transformed_object_file_path, preprocessor)

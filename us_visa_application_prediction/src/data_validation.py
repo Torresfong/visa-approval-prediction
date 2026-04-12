@@ -91,16 +91,15 @@ class DataValidation:
         """
         try:
             report = Report(metrics=[DataDriftPreset()])
-            snapshot = report.run(reference_df,current_df)
+            snapshot = report.run(reference_data=reference_df,current_data=current_df)
             json_report = snapshot.dump_dict()
+            
+            drift_results = json_report["tests"] if "tests" in json_report else json_report
+
+            all_metrics  = json_report.get("metric_result",json_report)
+            drift_status = all_metrics.get("dataset_drift", False)
             write_yaml_file(file_path=self.data_validation_config.drift_report_file_path, content=json_report)
-
-            metrics  = json_report["metrics"][0]["result"]
-            n_features = metrics["number_of_columns"]
-            n_drifted_features = metrics["number_of_drifted_columns"]
-            drift_status = metrics["dataset_drift"]
-
-            logging.info(f"{n_drifted_features}/{n_features} drift detected.")
+            logging.info(f"Drift detected: {drift_status}")
             return drift_status
         
         except Exception as e:

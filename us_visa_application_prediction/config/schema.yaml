@@ -1,5 +1,5 @@
 columns:
-  - case_id: category
+  - _id: category
   - continent: category
   - education_of_employee: category
   - has_job_experience: category
@@ -18,7 +18,7 @@ numerical_columns:
   - yr_of_estab
 
 categorical_columns:
-  - case_id
+  - _id
   - continent
   - education_of_employee
   - has_job_experience
@@ -29,7 +29,7 @@ categorical_columns:
   - case_status
 
 drop_columns:
-  - case_id
+  - _id
   - yr_of_estab
 
 # for data transformation
