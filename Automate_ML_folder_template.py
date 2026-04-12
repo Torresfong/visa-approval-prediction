@@ -21,6 +21,8 @@ list_of_files = [
     f"{project_name}/src/prediction.py",
     f"{project_name}/config/__init__.py",
     f"{project_name}/config/data_loader.py",
+    f"{project_name}/config/schema.yaml",
+    f"{project_name}/config/model.yaml",
     f"{project_name}/entity/__init__.py",
     f"{project_name}/entity/config_entity.py",
     f"{project_name}/entity/artifact_entity.py",
@@ -33,8 +35,7 @@ list_of_files = [
     "Dockerfile",
     ".dockerignore",
     "setup.py",
-    "model.yaml",
-    "schema.yaml"
+    
 ]
 
 for filepath in list_of_files:

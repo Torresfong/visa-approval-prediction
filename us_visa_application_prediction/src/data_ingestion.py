@@ -36,11 +36,11 @@ class DataIngestion:
             dataframe = usvisa_data.export_collection_as_dataframe(collection_name=
                                                                    self.data_ingestion_config.collection_name)
             logging.info(f"Shape of dataframe: {dataframe.shape}")
-            feature_store_file_path  = self.data_ingestion_config.feature_store_file_path
-            dir_path = os.path.dirname(feature_store_file_path)
-            os.makedirs(dir_path,exist_ok=True)
+            feature_store_file_path  = self.data_ingestion_config.feature_store_file_path # get the file path from the data ingestion config
+            dir_path = os.path.dirname(feature_store_file_path) # get the directory path from the file path
+            os.makedirs(dir_path,exist_ok=True) # create the directory if it does not exist/ if exist then do nothing and wont return error
             logging.info(f"Saving exported data into feature store file path: {feature_store_file_path}")
-            dataframe.to_csv(feature_store_file_path,index=False,header=True)
+            dataframe.to_csv(feature_store_file_path,index=False,header=True) # save the dataframe to csv file in the feature store file path
             return dataframe
 
         except Exception as e:
@@ -64,7 +64,7 @@ class DataIngestion:
             logging.info(
                 "Exited split_data_as_train_test method of Data_Ingestion class"
             )
-            dir_path = os.path.dirname(self.data_ingestion_config.training_file_path)
+            dir_path = os.path.dirname(self.data_ingestion_config.training_file_path) # get the directory path from the training file path
             os.makedirs(dir_path,exist_ok=True)
             
             logging.info(f"Exporting train and test file path.")
@@ -98,11 +98,11 @@ class DataIngestion:
             logging.info("Performed train test split on the dataset")
 
             logging.info(
-                "Exited initiate_data_ingestion method of Data_Ingestion class"
+                "initiate_data_ingestion method of Data_Ingestion class"
             )
 
             data_ingestion_artifact = DataIngestionArtifact(trained_file_path=self.data_ingestion_config.training_file_path,
-            test_file_path=self.data_ingestion_config.testing_file_path)
+            test_file_path=self.data_ingestion_config.testing_file_path) # create an instance of data ingestion artifact and pass the train file path and test file path as the arguments to the constructor of data ingestion artifact
             
             logging.info(f"Data ingestion artifact: {data_ingestion_artifact}")
             return data_ingestion_artifact
